@@ -23,12 +23,12 @@ export function ContestBoard() {
   return (
     <div className="space-y-4">
       <HonestyNote>
-        أسماء المدارس والأرقام تجريبية لتوضيح الآلية. لا تُعلن جائزة حقيقية من هذا اللوح.
+        أسماء الجهات والأرقام تجريبية لتوضيح الآلية. لا يُنفَّذ عرض من هذا اللوح دون اعتماد.
       </HonestyNote>
       <div className="grid gap-4 lg:grid-cols-[1fr_1.1fr]">
         <Card className="shadow-sm">
           <CardHeader>
-            <CardTitle className="text-base">الرياض والمدارس في الدورة</CardTitle>
+            <CardTitle className="text-base">الجهات التجريبية في الدورة</CardTitle>
           </CardHeader>
           <CardContent className="space-y-2">
             {contestSchools.map((item) => (
@@ -42,7 +42,7 @@ export function ContestBoard() {
               >
                 <span className="font-medium">{item.name}</span>
                 <span className="mt-1 text-xs text-muted-foreground">
-                  {item.type} · {item.city} · {item.wrappers} غلاف · {item.lastOrderCartons} كرتون
+                  {item.type} · {item.city} · {item.wrappers} نقطة · {item.lastOrderCartons} كمية
                 </span>
               </button>
             ))}
@@ -53,7 +53,7 @@ export function ContestBoard() {
             <CardHeader>
               <div className="flex flex-wrap gap-2">
                 <Badge>{school.status}</Badge>
-                <Badge variant="outline">{proposal.action === "prize" ? "جائزة مقترحة" : proposal.action === "nudge" ? "تذكير طلب" : "انتظار"}</Badge>
+                <Badge variant="outline">{proposal.action === "prize" ? "عرض مقترح" : proposal.action === "nudge" ? "تذكير طلب" : "انتظار"}</Badge>
               </div>
               <CardTitle className="text-base">{school.name}</CardTitle>
             </CardHeader>
@@ -77,8 +77,8 @@ export function ContestBoard() {
                   إيقاف
                 </Button>
                 <Button asChild variant="secondary" className="cursor-pointer">
-                  <a href={getWhatsAppUrl(`مسابقة ${school.name}`)} target="_blank" rel="noreferrer">
-                    واتساب المنسّقة عبر المبيعات
+                  <a href={getWhatsAppUrl(`محرّك ${school.name}`)} target="_blank" rel="noreferrer">
+                    واتساب الجهة عبر المبيعات
                   </a>
                 </Button>
               </div>
@@ -86,8 +86,8 @@ export function ContestBoard() {
           </Card>
         ) : null}
       </div>
-      <HumanInTheLoop note="الجائزة لحظة تسويقية. إن أُعلنت قبل الاعتماد تتحول إلى دين على المصنع." />
-      <SalesCallBar extra="أريد تشغيل مسابقة رياض الأطفال هذا الأسبوع" />
+      <HumanInTheLoop note="العرض لحظة بيع. إن أُرسل قبل الاعتماد يصبح التزاماً على الشركة." />
+      <SalesCallBar extra="أريد تشغيل المحرّك التجريبي هذا الأسبوع" />
     </div>
   );
 }

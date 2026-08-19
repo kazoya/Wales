@@ -2,14 +2,14 @@ import { Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { formatPhoneDisplay, getSalesCallUrl, getWhatsAppUrl, siteConfig } from "@/lib/config";
 
-export function SalesCallBar({ extra = "تفعيل مسابقة المدارس" }: { extra?: string }) {
+export function SalesCallBar({ extra }: { extra?: string }) {
   return (
     <div className="rounded-2xl border border-gold/40 bg-primary px-4 py-4 text-primary-foreground shadow-md">
       <p className="text-xs font-medium tracking-[0.16em] text-gold uppercase">إلى عناية {siteConfig.recipient}</p>
-      <p className="mt-1 text-sm font-semibold sm:text-base">بعد هذه الصفحة: مكالمة واحدة تفتح رياضاً هذا الأسبوع</p>
+      <p className="mt-1 text-sm font-semibold sm:text-base">بعد هذه الصفحة: مكالمة واحدة تفتح تجريباً هذا الأسبوع</p>
       <div className="mt-3 flex flex-wrap gap-2">
         <Button asChild size="sm" className="cursor-pointer bg-ochre text-primary hover:bg-gold">
-          <a href={getWhatsAppUrl(extra)}>
+          <a href={getWhatsAppUrl(extra || siteConfig.engine)}>
             <MessageCircle className="size-4" /> واتساب المبيعات
           </a>
         </Button>

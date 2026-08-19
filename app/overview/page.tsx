@@ -7,50 +7,29 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { siteConfig } from "@/lib/config";
 
-const layers = [
-  {
-    title: "ما نعرفه علناً",
-    items: [
-      `${siteConfig.parentAr} منذ ${siteConfig.since}`,
-      "علامة بنون: ميغو، كيدو، معجون، تشامبيون",
-      "مدينة الملك عبدالله الثاني الصناعية — عمّان",
-      "إعادة استخدام العلبة حصّالة/طعام/كوب",
-      "واتساب وبريد المبيعات حسب توجيه الإدارة",
-    ],
-  },
-  {
-    title: "ما لا نعرفه بعد",
-    items: [
-      "طاقة الخطوط وأصل الشوكولاتة",
-      "ملف مخبري لخلو المواد الحافظة",
-      "خريطة الموزّعين",
-      "هل جُرّبت رياض سابقاً",
-      "من يدير الووردبريس",
-    ],
-  },
-  {
-    title: "ماذا نقترح",
-    items: [
-      "إصلاح الموقع بالعربية",
-      "مسابقة 12 روضة تجريبية",
-      "التقاط طلب واتساب",
-      "رسائل مديرة جاهزة",
-      "اعتماد بشري للجوائز والأسعار",
-    ],
-  },
-];
-
 export default function OverviewPage() {
+  const layers = [
+    {
+      title: "ما نعرفه علناً",
+      items: [siteConfig.parentAr, siteConfig.industry, siteConfig.addressAr, "واتساب وبريد حسب البطاقة/الموقع"],
+    },
+    {
+      title: "ما لا نعرفه بعد",
+      items: ["طاقة الخطوط الداخلية", "خريطة العملاء الحقيقية", "من يعتمد السعر يومياً", "أنظمة غير ظاهرة للزائر"],
+    },
+    {
+      title: "ماذا نقترح",
+      items: ["التقاط واتساب", siteConfig.engine, "كتالوج عربي من المصدر", "اعتماد بشري للسعر"],
+    },
+  ];
   return (
     <div className="mx-auto max-w-5xl space-y-6">
       <PageHeader
         eyebrow="Executive brief"
-        title="تصور تنفيذي: المصنع يبيع للمديرة لا للرف فقط"
-        description="الإدارة ترى دلتا كصانع وبنون كقناة ثقة. ليست كتالوج صور ولا أرقام مخترعة."
+        title={`تصور تنفيذي: ${siteConfig.nameAr}`}
+        description={siteConfig.hero}
       />
-      <HonestyNote>
-        صفحة الإحصاءات على الموقع تعرض أصفاراً. لن نختلق «سنوات خبرة» أو «دول تصدير» حتى تُملأ من الإدارة.
-      </HonestyNote>
+      <HonestyNote>{siteConfig.gap}</HonestyNote>
       <div className="grid gap-4 md:grid-cols-3">
         {layers.map((layer) => (
           <Card key={layer.title} className="shadow-sm">
@@ -68,10 +47,10 @@ export default function OverviewPage() {
         ))}
       </div>
       <HumanInTheLoop />
-      <SalesCallBar extra="التصور التنفيذي — أريد تجريب 12 روضة" />
+      <SalesCallBar extra="التصور التنفيذي — أريد بدء التجريب" />
       <div className="flex flex-wrap gap-2">
         <Button asChild className="cursor-pointer">
-          <Link href="/contests">المسابقات</Link>
+          <Link href="/contests">المحرّك</Link>
         </Button>
         <Button asChild variant="outline" className="cursor-pointer">
           <Link href="/assessment">الاكتشاف</Link>

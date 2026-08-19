@@ -2,27 +2,19 @@ import { HonestyNote } from "@/components/shared/demo-badge";
 import { PageHeader } from "@/components/shared/page-header";
 import { SalesCallBar } from "@/components/shared/sales-call-bar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { siteConfig } from "@/lib/config";
 
 const items = [
-  {
-    title: "مونتيسوري كما يذكر الموقع",
-    text: "بنون تقدم نفسها كإعداد جيل موهوب بطريقة مونتيسوري. في البيع المدرسي نترجم ذلك إلى: الطفل يلمس، يعدّ، يلصق بطاقة، ثم يأكل. لا ندّعي منهجاً بديلاً عن المعلمة.",
-  },
-  {
-    title: "ما قبل القراءة والمفردات",
-    text: "ميغو تويز على الموقع يربط البيضة بمهارات ما قبل القراءة. البطاقة التعليمية داخل العبوة هي جسر المديرة: «هذا ليس سكاكر الطابور».",
-  },
-  {
-    title: "حساب بسيط داخل المسابقة",
-    text: "عدّ الأغلفة نفسه تمرين عدد. الشوكولاتة «تحسّن الرياضيات» عبارة تسويقية على الموقع — نستخدم العدّ الحقيقي لا الادعاء الطبي.",
-  },
+  { title: "جملة الإغلاق", text: "المشتري يريد رفّاً باسمه لا باسم المصنع. المنصة تعرض التشكيلة وأنت تعتمد الهامش" },
+  { title: "ما يدرَّب عليه المندوب", text: "يعيد الوعد كما هو: تشكيلة ليبل خاص للسوبرماركت لا تُسعَّر إلا باعتمادك ثم يحول الرسالة بطاقة." },
+  { title: "ما لا يُقال", text: "لا طاقة إنتاج ولا شهادات ولا أسعار إن لم تُعتمد. المصدر أو الاعتذار." },
 ];
 
 export default function EducationPage() {
   return (
     <div className="mx-auto max-w-4xl space-y-6">
-      <PageHeader title="تعلّم باللعب" description="الموقع يضع التعليم بجانب المتعة. المسابقة تجعل التعليم مرئياً لإدارة المدرسة." demo={false} />
-      <HonestyNote>لا نؤلف بطاقات غير موجودة. نبني المسابقة على البطاقة واللعبة اللتين داخل العبوة اليوم.</HonestyNote>
+      <PageHeader title="تمكين الفريق" description={siteConfig.engine} demo={false} />
+      <HonestyNote>التدريب هنا على جملة صادقة ومسار اعتماد، لا على حفظ كتالوج مخترع.</HonestyNote>
       {items.map((item) => (
         <Card key={item.title} className="shadow-sm">
           <CardHeader>
@@ -31,7 +23,7 @@ export default function EducationPage() {
           <CardContent className="text-sm leading-7 text-muted-foreground">{item.text}</CardContent>
         </Card>
       ))}
-      <SalesCallBar extra="الجانب التعليمي — أريد نموذجاً لبطاقة صفّية" />
+      <SalesCallBar extra="تمكين الفريق — أريد تدريب المندوبين على الجملة" />
     </div>
   );
 }

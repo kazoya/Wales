@@ -8,7 +8,7 @@ export default function AiPage() {
     <div className="mx-auto max-w-5xl space-y-6">
       <PageHeader
         title="فرص الذكاء"
-        description="صياغة رسالة واكتشاف انقطاع الطلب. لا تسعير آلي ولا ادعاء غذائي من النموذج."
+        description="صياغة رسالة واكتشاف انقطاع الطلب. لا تسعير آلي ولا تعديل مواصفة من النموذج."
       />
       <HumanInTheLoop />
       <OpportunityGrid items={aiOpportunities} />

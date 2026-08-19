@@ -8,10 +8,10 @@ export function proposeContest(school: ContestSchool): ContestProposal {
     return {
       schoolId: school.id,
       action: "prize",
-      prize: school.type === "روضة" ? "ركن ألعاب صفّي + شهادات للأطفال" : "يوم ترفيهي + مخزون كافتيريا مخفّض",
+      prize: "عرض/إجراء مقترح ضمن «ليبل خاص» — لا يُنفَّذ إلا بعد اعتماد مدير المبيعات",
       reasons: [
-        `جُمع ${school.wrappers} غلاف/رمز — فوق عتبة الجائزة التجريبية ${WRAPPER_PRIZE_THRESHOLD}.`,
-        "الجائزة لا تُعلن ولا تُشحن إلا بعد اعتماد مدير المبيعات.",
+        `جُمعت ${school.wrappers} نقطة تجريبية — فوق عتبة الاقتراح.`,
+        "التنفيذ لا يتم إلا بعد اعتماد بشري.",
       ],
       requiresApproval: true,
     };
@@ -20,10 +20,10 @@ export function proposeContest(school: ContestSchool): ContestProposal {
     return {
       schoolId: school.id,
       action: "nudge",
-      prize: "تذكير منسّقة المسابقة بطلب الكراتين الناقصة",
+      prize: "تذكير واتساب بشري بمتابعة الطلب",
       reasons: [
-        `آخر طلب ${school.lastOrderCartons} كرتون — أقل من حد التفعيل التجريبي.`,
-        "الرسالة تُقترح هنا، والإرسال يبقى بشرياً من واتساب المبيعات.",
+        `آخر كمية ${school.lastOrderCartons} — أقل من حد التفعيل التجريبي.`,
+        "الرسالة تُقترح هنا، والإرسال يبقى من واتساب المبيعات.",
       ],
       requiresApproval: true,
     };
@@ -31,8 +31,8 @@ export function proposeContest(school: ContestSchool): ContestProposal {
   return {
     schoolId: school.id,
     action: "hold",
-    prize: "الاستمرار في العدّ دون جائزة هذا الأسبوع",
-    reasons: ["المشاركة جيدة والطلب منتظم. لا مكافأة مبكرة حتى لا تُفرَّغ الميزانية."],
+    prize: "الاستمرار في المتابعة دون عرض هذا الأسبوع",
+    reasons: ["المشاركة منتظمة. لا عرض مبكر حتى لا يُفرَّغ الهامش."],
     requiresApproval: true,
   };
 }

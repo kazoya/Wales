@@ -11,17 +11,13 @@ export default function ContactPage() {
   const emails = getContactEmails();
   return (
     <div className="mx-auto max-w-3xl space-y-6">
-      <PageHeader
-        title="تواصل معنا"
-        description="أرقام الموقع + واتساب وبريد مدير المبيعات كما طُلب لهذا التصور."
-        demo={false}
-      />
+      <PageHeader title="تواصل معنا" description="أرقام وواتساب وبريد المبيعات كما زُوّدت لهذا التصور." demo={false} />
       <HonestyNote>
-        صفحة الاتصال في الموقع لا تعرض بريداً واضحاً ونموذجها يظهر رمزاً فارغاً. نستخدم sales@banoonkids.com كما زُوّد هنا.
+        الموقع يخلط أسماء المجموعة. الكتالوج التفصيلي للموزّع غير ظاهر كطلب. نستخدم بيانات البطاقة والموقع المنشور فقط.
       </HonestyNote>
       <Card className="shadow-sm">
         <CardHeader>
-          <CardTitle className="text-base">بنون كيدز — دلتا للصناعات البلاستيكية</CardTitle>
+          <CardTitle className="text-base">{siteConfig.nameAr} — {siteConfig.parentAr}</CardTitle>
         </CardHeader>
         <CardContent className="space-y-2 text-sm leading-7">
           <p>{siteConfig.addressAr}</p>
@@ -38,7 +34,6 @@ export default function ContactPage() {
               {formatPhoneDisplay(siteConfig.salesPhone)}
             </a>
           </p>
-          <p className="font-medium">أرقام صفحة الاتصال في الموقع</p>
           {siteConfig.phones
             .filter((p) => String(p) !== String(siteConfig.defaultWhatsAppPhone) && String(p) !== String(siteConfig.salesPhone))
             .map((p) => (

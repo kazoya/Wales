@@ -43,10 +43,10 @@ export default function AssessmentResultsPage() {
         </CardHeader>
         <CardContent className="space-y-2 text-sm leading-7 text-muted-foreground">
           <p>الخطوط: {values.lines || "غير محدد"}</p>
-          <p>خلو المواد الحافظة: {values.preservativeClaim || "غير محدد"}</p>
+          <p>المواصفة المعلنة: {values.preservativeClaim || "غير محدد"}</p>
           <p>قنوات الطلب: {values.orderChannels.join(" · ") || "غير محدد"}</p>
-          <p>قناة المدارس: {values.schoolChannel || "غير محدد"}</p>
-          <p>المسابقات السابقة: {values.contestToday || "غير محدد"}</p>
+          <p>قناة التشغيل: {values.schoolChannel || "غير محدد"}</p>
+          <p>تجريب سابق: {values.contestToday || "غير محدد"}</p>
           <p>ملاحظات: {values.notes || "لا شيء"}</p>
         </CardContent>
       </Card>

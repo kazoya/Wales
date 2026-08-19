@@ -3,7 +3,7 @@ import { PageHeader } from "@/components/shared/page-header";
 import { SalesCallBar } from "@/components/shared/sales-call-bar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { salesScripts } from "@/data/scripts";
-import { getWhatsAppUrl } from "@/lib/config";
+import { getWhatsAppUrl, siteConfig } from "@/lib/config";
 
 export default function MarketingPage() {
   return (
@@ -11,11 +11,11 @@ export default function MarketingPage() {
       <PageHeader
         eyebrow="Close the call"
         title="رسائل تُقنع في مكالمة واحدة"
-        description="نصوص جاهزة لمدير المبيعات. قصيرة، قابلة للتطبيق، بلا جوائز عالمية مخترعة."
+        description="نصوص جاهزة لمدير المبيعات. قصيرة، قابلة للتطبيق، بلا أرقام مخترعة."
         demo={false}
       />
       <HonestyNote>
-        قوة الجملة في التكرار الصادق: بلا مواد حافظة، الألذ في فم الطفل، العلبة تبقى، والمسابقة تجعل الصف يطلب. أي مبالغة دولية تُحذف.
+        قوة الجملة في التكرار الصادق: {siteConfig.promiseAr} أي مبالغة تُحذف.
       </HonestyNote>
       {salesScripts.map((script) => (
         <Card key={script.id} className="shadow-sm">

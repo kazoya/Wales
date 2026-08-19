@@ -4,41 +4,42 @@ import { HonestyNote } from "@/components/shared/demo-badge";
 import { KpiCard } from "@/components/shared/kpi-card";
 import { PageHeader } from "@/components/shared/page-header";
 import { SalesCallBar } from "@/components/shared/sales-call-bar";
+import { siteConfig } from "@/lib/config";
 
 const trend = [
-  { m: "1", schools: 2, cartons: 8 },
-  { m: "2", schools: 4, cartons: 18 },
-  { m: "3", schools: 7, cartons: 31 },
-  { m: "4", schools: 12, cartons: 54 },
+  { m: "1", accounts: 2, orders: 8 },
+  { m: "2", accounts: 4, orders: 18 },
+  { m: "3", accounts: 7, orders: 31 },
+  { m: "4", accounts: 12, orders: 54 },
 ];
 
 const bars = [
-  { ch: "كافتيريا", n: 40 },
-  { ch: "موزّع", n: 28 },
-  { ch: "سوبرماركت", n: 22 },
-  { ch: "مسابقة", n: 10 },
+  { ch: "واتساب", n: 40 },
+  { ch: "هاتف", n: 28 },
+  { ch: "موقع", n: 22 },
+  { ch: "زيارة", n: 10 },
 ];
 
 export default function DashboardPage() {
   return (
     <div className="mx-auto max-w-5xl space-y-6">
-      <PageHeader title="لوحة القيادة" description="مؤشرات تجريبية لشكل المتابعة بعد تجريب 12 روضة." />
-      <HonestyNote>كل رقم هنا افتراضي. موقع بنون يعرض أصفاراً علناً — لن نملأها تخميناً.</HonestyNote>
+      <PageHeader title="لوحة القيادة" description={`مؤشرات تجريبية لشكل المتابعة — ${siteConfig.nameAr}.`} />
+      <HonestyNote>كل رقم هنا افتراضي. لا نملأ أصفار الموقع تخميناً.</HonestyNote>
       <div className="grid gap-3 md:grid-cols-4">
-        <KpiCard label="رياض نشطة" value={12} delta="تجريبي" />
-        <KpiCard label="جوائز بانتظار اعتماد" value={2} />
+        <KpiCard label="جهات تجريبية" value={12} delta="تجريبي" />
+        <KpiCard label="عروض بانتظار اعتماد" value={2} />
         <KpiCard label="طلبات واتساب مفتوحة" value={9} />
-        <KpiCard label="نشرات أصناف مكتملة" value="2 / 9" hint="ميغو + معجون" />
+        <KpiCard label="خطوط كتالوج معلنة" value="—" hint="من الموقع فقط" />
       </div>
       <div className="grid gap-4 md:grid-cols-2">
         <div className="rounded-xl border bg-card p-4">
-          <p className="mb-2 text-sm font-medium">نمو المدارس والكراتين — سيناريو</p>
+          <p className="mb-2 text-sm font-medium">نمو الجهات والطلبات — سيناريو</p>
           <TrendChart
             data={trend}
             xKey="m"
             series={[
-              { key: "schools", name: "مدارس", color: "#be185d" },
-              { key: "cartons", name: "كراتين", color: "#f59e0b" },
+              { key: "accounts", name: "جهات", color: "#be185d" },
+              { key: "orders", name: "طلبات", color: "#f59e0b" },
             ]}
           />
         </div>

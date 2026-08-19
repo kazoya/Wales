@@ -1,8 +1,9 @@
 import { cn } from "@/lib/utils";
+import { siteConfig } from "@/lib/config";
 
 export function BrandLogo({
   className,
-  alt = "شعار بنون كيدز",
+  alt,
   priority = false,
 }: {
   className?: string;
@@ -13,7 +14,7 @@ export function BrandLogo({
     // eslint-disable-next-line @next/next/no-img-element
     <img
       src="/logo.svg"
-      alt={alt}
+      alt={alt ?? siteConfig.nameAr}
       width={400}
       height={160}
       className={cn("h-full w-full object-contain object-center", className)}

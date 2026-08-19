@@ -11,7 +11,7 @@ export const departmentLabel: Record<string, string> = {
   production: "الإنتاج",
   quality: "الجودة",
   packing: "التعبئة",
-  schools: "المدارس والرياض",
+  schools: "قناة التشغيل",
   distributors: "الموزّعون",
   management: "الإدارة",
 };

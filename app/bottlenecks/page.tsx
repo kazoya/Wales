@@ -2,12 +2,17 @@ import { HonestyNote } from "@/components/shared/demo-badge";
 import { PageHeader } from "@/components/shared/page-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { bottlenecks } from "@/data/bottlenecks";
+import { siteConfig } from "@/lib/config";
 import { departmentLabel } from "@/lib/format";
 
 export default function BottlenecksPage() {
   return (
     <div className="mx-auto max-w-4xl space-y-6">
-      <PageHeader title="الاختناقات الظاهرة بعد فحص الموقع" description="ملاحظات من banoonkids.com ومن قناة المبيعات المعلنة." demo={false} />
+      <PageHeader
+        title="الاختناقات الظاهرة بعد فحص الموقع"
+        description={`ملاحظات من ${siteConfig.websiteHost} ومن قناة المبيعات المعلنة.`}
+        demo={false}
+      />
       <HonestyNote>هذه قراءة خارجية. قد يكون لدى الشركة أنظمة داخلية لا تظهر للزائر.</HonestyNote>
       {bottlenecks.map((item) => (
         <Card key={item.id} className="shadow-sm">

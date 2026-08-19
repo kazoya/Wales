@@ -22,7 +22,7 @@ export function BrandMark({
       {showText ? (
         <span className="min-w-0 text-right">
           <span className="block text-[10px] tracking-[0.18em] text-gold uppercase">{siteConfig.brandLine}</span>
-          <span className={cn("mt-0.5 block text-sm font-semibold leading-5", textMain)}>بنون كيدز</span>
+          <span className={cn("mt-0.5 block text-sm font-semibold leading-5", textMain)}>{siteConfig.nameAr}</span>
           <span className={cn("block text-[11px] leading-4", textMuted)}>{siteConfig.parentAr}</span>
         </span>
       ) : null}

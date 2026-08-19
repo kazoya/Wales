@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const STORAGE_KEY = "banoon-discovery-assessment";
+export const STORAGE_KEY = "wales-discovery-assessment";
 const text = z.string();
 const list = z.array(z.string());
 
@@ -38,7 +38,7 @@ export const defaultAssessment: AssessmentValues = {
   notes: "",
 };
 
-export const channelOptions = ["واتساب", "هاتف", "موزّع", "سوبرماركت", "كافتيريا مدرسة", "موقع"];
+export const channelOptions = ["واتساب", "هاتف", "موزّع", "موقع", "زيارة"];
 export const systemOptions = ["إكسل", "محاسبة", "واتساب فقط", "ERP", "غير معروف"];
 
 export function loadAssessment(): AssessmentValues {

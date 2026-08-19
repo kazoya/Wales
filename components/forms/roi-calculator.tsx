@@ -21,15 +21,15 @@ export function RoiCalculator() {
   return (
     <div className="space-y-4">
       <HonestyNote>
-        آلة توضيحية فقط. ليست أرباح بنون الفعلية ولا تكلفة زيارة ميدانية معتمدة.
+        آلة توضيحية فقط. ليست أرباحاً فعلية ولا تكلفة زيارة معتمدة.
       </HonestyNote>
       <div className="grid gap-4 md:grid-cols-2">
-        <Num label="رياض/مدارس في التجريب" value={schools} onChange={setSchools} />
-        <Num label="كراتين لكل جهة في الدورة" value={cartons} onChange={setCartons} />
-        <Num label="هامش الكرتون (د.أ) — افتراض" value={margin} onChange={setMargin} />
+        <Num label="جهات في التجريب" value={schools} onChange={setSchools} />
+        <Num label="كمية لكل جهة في الدورة" value={cartons} onChange={setCartons} />
+        <Num label="هامش الوحدة (د.أ) — افتراض" value={margin} onChange={setMargin} />
         <Num label="زيارات تُختصر أسبوعياً بالأتمتة" value={visits} onChange={setVisits} />
         <Num label="تكلفة ساعة المبيعات" value={wage} onChange={setWage} />
-        <Num label="تكلفة تجريب أولى (جوائز + طباعة)" value={pilot} onChange={setPilot} />
+        <Num label="تكلفة تجريب أولى (مواد + طباعة)" value={pilot} onChange={setPilot} />
       </div>
       <Card>
         <CardHeader>

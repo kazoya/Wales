@@ -23,11 +23,11 @@ export function KnowledgeAssistant() {
   return (
     <div className="mx-auto max-w-4xl space-y-6">
       <PageHeader
-        title="مساعد معرفة بنون"
+        title="مساعد معرفة العلامة"
         description="يجيب من الموقع العام وهذا التصور. لا شهادة مختبر إن لم يوجد مصدر."
         demoLabel="مصدر عام أو اعتذار"
       />
-      <HonestyNote>صفحات المنتجات الرقيقة تُعلن كناقصة بدل اختراع فرق بين كيدو وتشامبيون.</HonestyNote>
+      <HonestyNote>الصفحات الرقيقة تُعلن ناقصة. لا نختلق فرقاً بين أصناف غير مفصّلة على الموقع.</HonestyNote>
       <div className="flex flex-wrap gap-2">
         {sampleQuestions.map((question) => (
           <Button key={question} type="button" variant="outline" size="sm" className="cursor-pointer" onClick={() => ask(question)}>
@@ -66,7 +66,7 @@ export function KnowledgeAssistant() {
         <AccordionItem value="rag">
           <AccordionTrigger>كيف سيُبنى لاحقاً؟</AccordionTrigger>
           <AccordionContent className="text-sm leading-7 text-muted-foreground">
-            تُفهرس نشرات بنون المعتمدة وشهادات الجودة ونصوص المسابقة. كل إجابة تذكر المصدر. لا تعديل ادعاء غذائي من المحادثة.
+            يُجيب من الموقع المنشور فقط. كل إجابة تذكر المصدر. لا تعديل مواصفة أو سعر من المحادثة.
           </AccordionContent>
         </AccordionItem>
       </Accordion>

@@ -8,6 +8,7 @@ import { DeveloperQr } from "@/components/layout/developer-qr";
 import { DemoBadge } from "@/components/shared/demo-badge";
 import { Button } from "@/components/ui/button";
 import { findNavLabel } from "@/lib/nav";
+import { siteConfig } from "@/lib/config";
 
 export function CommandBar({ onOpenMenu }: { onOpenMenu: () => void }) {
   const pathname = usePathname();
@@ -23,14 +24,14 @@ export function CommandBar({ onOpenMenu }: { onOpenMenu: () => void }) {
           </Link>
           <div className="min-w-0">
             <p className="truncate text-sm font-medium">{findNavLabel(pathname)}</p>
-            <p className="hidden text-xs text-muted-foreground sm:block">مسابقات · مبيعات مدارس · بلا مواد حافظة</p>
+            <p className="hidden text-xs text-muted-foreground sm:block">{siteConfig.engine} · {siteConfig.industry}</p>
           </div>
         </div>
         <div className="flex items-center gap-2 sm:gap-3">
           <DeveloperQr compact />
           <DemoBadge label="Demo Environment" className="hidden md:inline-flex" />
           <Button asChild size="sm" variant="outline" className="hidden cursor-pointer sm:inline-flex">
-            <Link href="/contests">تشغيل المسابقة</Link>
+            <Link href="/contests">تشغيل المحرّك</Link>
           </Button>
         </div>
       </div>

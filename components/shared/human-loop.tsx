@@ -1,4 +1,5 @@
 import { ArrowLeft } from "lucide-react";
+import { siteConfig } from "@/lib/config";
 
 const steps = ["توصية المنصة", "مراجعة المبيعات", "الاعتماد", "التنفيذ"];
 
@@ -16,7 +17,7 @@ export function HumanInTheLoop({ note }: { note?: string }) {
       </ol>
       <p className="mt-3 text-xs leading-6 text-muted-foreground">
         {note ??
-          "لا يُعلن فائز مسابقة، ولا يُعتمد سعر جملة، ولا تُرسل رسالة لمديرة روضة، ولا تُنشر جملة «بلا مواد حافظة» دون اعتماد الجودة والمبيعات."}
+          `لا يُعتمد سعر ولا يُرسل عرض نهائي ولا تُنشر مواصفة دون اعتماد المبيعات والجودة — محرّك ${siteConfig.engine}.`}
       </p>
     </div>
   );

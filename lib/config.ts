@@ -28,6 +28,11 @@ export const siteConfig = {
   hoursAr: "ساعات الدوام الداخلي غير منشورة على الموقع",
   addressAr: "عمّان، الأردن",
   promiseAr: "تشكيلة ليبل خاص للسوبرماركت لا تُسعَّر إلا باعتمادك",
+  engine: "ليبل خاص",
+  gap: "الموقع يخلط أسماء المجموعة. الكتالوج التفصيلي للموزّع غير ظاهر كطلب.",
+  industry: "عناية شخصية ومنظفات وليبل خاص",
+  hero: "المشتري يريد رفّاً باسمه لا باسم المصنع. المنصة تعرض التشكيلة وأنت تعتمد الهامش",
+  websiteHost: "wales.jo",
   developer: { nameAr: "م. صهيب الصالح", phone: "962787523192", prefill: "Wales" },
 } as const;
 export function getDiscoveryFormUrl(): string { return readPublic("NEXT_PUBLIC_DISCOVERY_FORM_URL"); }

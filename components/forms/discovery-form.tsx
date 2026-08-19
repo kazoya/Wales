@@ -21,7 +21,7 @@ import {
   type AssessmentValues,
 } from "@/lib/assessment";
 
-const steps = ["المصنع والجودة", "المبيعات والتوزيع", "المدارس والمسابقة"];
+const steps = ["المصنع والجودة", "المبيعات والتوزيع", "قناة التشغيل"];
 
 export function DiscoveryForm() {
   const router = useRouter();
@@ -40,7 +40,7 @@ export function DiscoveryForm() {
 
   return (
     <div className="mx-auto max-w-3xl space-y-6">
-      <PageHeader title="تقييم اكتشاف بنون" description="أسئلة المصنع والمبيعات والمدارس. يُحفظ في هذا المتصفح فقط." demo={false} />
+      <PageHeader title="تقييم اكتشاف ويلز" description="أسئلة المصنع والمبيعات وقناة التشغيل. يُحفظ في هذا المتصفح فقط." demo={false} />
       <HonestyNote>الحقول الفارغة تبقى «غير معروف». لا نملأ طاقة إنتاج أو شهادات من عندنا.</HonestyNote>
       <p className="text-sm text-muted-foreground">
         القسم {step + 1} من {steps.length}: {steps[step]}
@@ -55,9 +55,9 @@ export function DiscoveryForm() {
         <CardContent className="space-y-4">
           {step === 0 ? (
             <>
-              <Field label="خطوط الإنتاج الحالية (بيضة / معجون / أصناف أخرى)" name="lines" register={form.register} />
-              <Field label="مصدر الشوكولاتة والحلوى" name="chocolateSource" register={form.register} />
-              <Field label="هل خلو المنتج من المواد الحافظة موثّق مخبرياً؟" name="preservativeClaim" register={form.register} />
+              <Field label="خطوط الإنتاج/الخدمة المعلنة" name="lines" register={form.register} />
+              <Field label="مصدر الخامات/المدخلات إن وُجد" name="chocolateSource" register={form.register} />
+              <Field label="هل المواصفة المعلنة موثّقة قبل النشر؟" name="preservativeClaim" register={form.register} />
               <Field label="كيف يتم الإفراج قبل الشحن؟" name="qaRelease" register={form.register} />
             </>
           ) : null}
@@ -83,8 +83,8 @@ export function DiscoveryForm() {
           ) : null}
           {step === 2 ? (
             <>
-              <Field label="هل توجد قناة رياض/مدارس اليوم؟" name="schoolChannel" register={form.register} />
-              <Field label="هل أُجريت مسابقات سابقاً؟" name="contestToday" register={form.register} />
+              <Field label="هل توجد قناة «ليبل خاص» اليوم؟" name="schoolChannel" register={form.register} />
+              <Field label="هل أُجري تجريب مشابه سابقاً؟" name="contestToday" register={form.register} />
               <div className="space-y-2">
                 <Label htmlFor="notes">ملاحظات</Label>
                 <Textarea id="notes" rows={4} {...form.register("notes")} />

@@ -4,16 +4,16 @@ import { SalesCallBar } from "@/components/shared/sales-call-bar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const uses = [
-  { title: "حصّالة", text: "بعد الشوكولاتة تبقى البيضة على الرف. الطفل يتعلم الادّخار — جملة يفهمها الأب فوراً." },
-  { title: "علبة طعام", text: "الموقع يذكر إعادة الاستخدام كعلبة غداء. في الروضة: لا بلاستيك يُرمى بعد الحصة." },
-  { title: "كوب عصير", text: "شكل جذاب بألوان الأطفال. الاستخدام الثالث يقلل اعتراض «بلاستيك لمرة واحدة»." },
+  { title: "الطلب لا يضيع", text: "الرسالة تتحول بطاقة. المتابعة لا تعتمد على ذاكرة شخص واحد." },
+  { title: "العرض يبقى بيدك", text: "تشكيلة ليبل خاص للسوبرماركت لا تُسعَّر إلا باعتمادك" },
+  { title: "العلاقة تتكرر", text: "بعد التسليم تبقى بطاقة الجهة جاهزة للطلب التالي." },
 ];
 
 export default function ReusePage() {
   return (
     <div className="mx-auto max-w-4xl space-y-6">
-      <PageHeader title="العلبة التي تبقى" description="الاستدامة هنا ليست شعاراً أخضر. هي سبب بقاء العلامة في غرفة الطفل." demo={false} />
-      <HonestyNote>آراء الأهل على الموقع تذكر الحصّالة والكوب وعلبة الطعام كسبب للتعلق بالمنتج.</HonestyNote>
+      <PageHeader title="ما يبقى بعد الصفقة" description="الاستدامة هنا تشغيلية: طلب متكرر بلا فوضى دردشة." demo={false} />
+      <HonestyNote>لا نختلق أثراً بيئياً أو اجتماعياً إن لم يُعلن على الموقع.</HonestyNote>
       <div className="grid gap-4 md:grid-cols-3">
         {uses.map((use) => (
           <Card key={use.title} className="shadow-sm">
@@ -24,7 +24,7 @@ export default function ReusePage() {
           </Card>
         ))}
       </div>
-      <SalesCallBar extra="إعادة الاستخدام — أريد صوراً حقيقية لحصّالات أطفال" />
+      <SalesCallBar extra="المتابعة — أريد تجريب بطاقة الطلب المتكرر" />
     </div>
   );
 }

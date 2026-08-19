@@ -4,16 +4,17 @@ import { PageHeader } from "@/components/shared/page-header";
 import { SalesCallBar } from "@/components/shared/sales-call-bar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { contestSchools } from "@/data/contests";
+import { siteConfig } from "@/lib/config";
 
 export default function CrmPage() {
   return (
     <div className="mx-auto max-w-5xl space-y-6">
-      <PageHeader title="العملاء والطلبات" description="بطاقة لكل روضة وموزّع: آخر كرتون، المنسّقة، وحالة المسابقة." />
-      <HonestyNote>الصفوف أدناه من بيانات تجريبية للمسابقة. ليست قاعدة عملاء دلتا.</HonestyNote>
+      <PageHeader title="العملاء والطلبات" description={`بطاقة لكل جهة: آخر كمية، المنسّق، وحالة ${siteConfig.engine}.`} />
+      <HonestyNote>الصفوف أدناه بيانات تجريبية. ليست قاعدة عملاء حقيقية.</HonestyNote>
       <div className="grid gap-3 md:grid-cols-3">
-        <KpiCard label="جهات تجريبية" value={contestSchools.length} hint="رياض + مدارس" />
-        <KpiCard label="أغلفة المجموعة" value={contestSchools.reduce((s, x) => s + x.wrappers, 0)} />
-        <KpiCard label="كراتين آخر طلب" value={contestSchools.reduce((s, x) => s + x.lastOrderCartons, 0)} />
+        <KpiCard label="جهات تجريبية" value={contestSchools.length} hint={siteConfig.engine} />
+        <KpiCard label="نقاط المجموعة" value={contestSchools.reduce((s, x) => s + x.wrappers, 0)} />
+        <KpiCard label="آخر كميات" value={contestSchools.reduce((s, x) => s + x.lastOrderCartons, 0)} />
       </div>
       <Card className="shadow-sm">
         <CardHeader>
@@ -27,7 +28,7 @@ export default function CrmPage() {
           ))}
         </CardContent>
       </Card>
-      <SalesCallBar extra="CRM — أريد إدخال موزّعينا الحقيقيين" />
+      <SalesCallBar extra="CRM — أريد إدخال عملائنا الحقيقيين" />
     </div>
   );
 }

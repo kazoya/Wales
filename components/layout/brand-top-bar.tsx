@@ -10,7 +10,8 @@ export function BrandTopBar() {
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
           <span className="inline-flex items-center gap-1.5">
             <MapPin className="size-3 text-gold" aria-hidden />
-            {siteConfig.cityDetailAr} · دلتا منذ {siteConfig.since}
+            {siteConfig.cityDetailAr}
+            {siteConfig.since ? ` · منذ ${siteConfig.since}` : ""}
           </span>
           {siteConfig.phones.slice(0, 2).map((phone) => (
             <a key={phone} href={`tel:+${phone}`} className="cursor-pointer hover:text-gold" dir="ltr">
@@ -24,7 +25,7 @@ export function BrandTopBar() {
           ))}
         </div>
         <a href={website} target="_blank" rel="noreferrer" className="cursor-pointer font-medium text-gold">
-          banoonkids.com
+          {siteConfig.websiteHost}
         </a>
       </div>
     </div>

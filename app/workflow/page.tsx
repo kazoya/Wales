@@ -2,12 +2,13 @@ import { HonestyNote } from "@/components/shared/demo-badge";
 import { PageHeader } from "@/components/shared/page-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { workflow } from "@/data/workflow";
+import { siteConfig } from "@/lib/config";
 
 export default function WorkflowPage() {
   return (
     <div className="mx-auto max-w-4xl space-y-6">
-      <PageHeader title="من المصنع إلى الطفل" description="دلتا تشكّل العبوة، بنون تملأها، المبيعات تصل للمديرة." />
-      <HonestyNote>خطوات المصنع الداخلية غير منشورة. نصفها «غير معروف» حتى الاكتشاف.</HonestyNote>
+      <PageHeader title="من الطلب إلى التسليم" description={`${siteConfig.parentAr} — ${siteConfig.engine}`} />
+      <HonestyNote>خطوات المصنع الداخلية غير منشورة بالكامل. نعلن «غير معروف» حتى الاكتشاف.</HonestyNote>
       {workflow.map((node) => (
         <Card key={node.id} className="shadow-sm">
           <CardHeader>

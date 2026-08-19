@@ -6,7 +6,7 @@ export default function RoiPage() {
     <div className="mx-auto max-w-3xl space-y-6">
       <PageHeader
         title="العائد على الاستثمار"
-        description="لا تقدير مالي جاد قبل قياس كراتين الكافتيريا وساعات المندوب. الآلة توضح طريقة الحساب فقط."
+        description="لا تقدير مالي جاد قبل قياس الطلبات الحقيقية وساعات المندوب. الآلة توضح طريقة الحساب فقط."
       />
       <RoiCalculator />
     </div>

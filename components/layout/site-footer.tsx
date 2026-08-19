@@ -16,7 +16,8 @@ export function SiteFooter() {
             <div>
               <p className="text-sm font-medium">{siteConfig.promiseAr}</p>
               <p className="text-xs text-muted-foreground">
-                {siteConfig.nameAr} · {siteConfig.parentAr} · منذ {siteConfig.since}
+                {siteConfig.nameAr} · {siteConfig.parentAr}
+                {siteConfig.since ? ` · منذ ${siteConfig.since}` : ""}
               </p>
             </div>
           </div>
@@ -26,7 +27,7 @@ export function SiteFooter() {
             الموقع الرسمي
           </a>
           <p className="text-xs leading-6 text-muted-foreground">
-            هذا النموذج تصور تقني مستقل لأغراض العرض والنقاش، ولا يمثل نظاماً رسمياً تابعاً لشركة دلتا أو بنون كيدز.
+            هذا النموذج تصور تقني مستقل لأغراض العرض والنقاش، ولا يمثل نظاماً رسمياً تابعاً لـ {siteConfig.nameAr} أو {siteConfig.parentAr}.
           </p>
         </div>
         <div className="space-y-4">
