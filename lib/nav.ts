@@ -46,6 +46,19 @@ export const navGroups: NavGroup[] = [
       { href: "/pilot", label: "خطة التنفيذ" },
     ],
   },
+    {
+    id: "smart-factory",
+    label: "المصنع الذكي",
+    items: [
+      { href: "/smart-factory", label: "خط المصنع 4.0" },
+      { href: "/iiot", label: "بوابة IIoT" },
+      { href: "/mes-erp", label: "MES / ERP" },
+      { href: "/traceability", label: "تتبع RFID" },
+      { href: "/digital-twin", label: "التوأم الرقمي" },
+      { href: "/cyber", label: "الأمن السيبراني" },
+      { href: "/course", label: "المساق التعليمي" },
+    ],
+  },
   {
     id: "discovery",
     label: "الاكتشاف",
